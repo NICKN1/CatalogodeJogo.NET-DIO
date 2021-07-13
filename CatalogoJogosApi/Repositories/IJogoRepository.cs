@@ -10,7 +10,7 @@ namespace CatalogoJogosApi.Repositories
     {
         Task<List<Jogo>> Obter(int pagina, int quantidade);
         Task<Jogo> Obter(Guid id);
-        Task<List<Jogo>> Obter(string nome, string produtora);
+        Task<List<Jogo>> Obter(string nome, string produtora, int Ano, string Genero);
         Task Inserir(Jogo jogo);
         Task Atualizar(Jogo jogo);
         Task Remover(Guid id);

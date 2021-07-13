@@ -28,7 +28,9 @@ namespace CatalogoJogosApi.Services
                 Id = jogo.Id,
                 Nome = jogo.Nome,
                 Produtora = jogo.Produtora,
-                Preco = jogo.Preco
+                Preco = jogo.Preco,
+                Ano = jogo.Ano,
+                Genero = jogo.Genero
             })
                                .ToList();
         }
@@ -45,13 +47,15 @@ namespace CatalogoJogosApi.Services
                 Id = jogo.Id,
                 Nome = jogo.Nome,
                 Produtora = jogo.Produtora,
-                Preco = jogo.Preco
+                Preco = jogo.Preco,
+                Ano = jogo.Ano,
+                Genero = jogo.Genero
             };
         }
 
         public async Task<JogoViewModel> Inserir(JogoInputModel jogo)
         {
-            var entidadeJogo = await _jogoRepository.Obter(jogo.Nome, jogo.Produtora);
+            var entidadeJogo = await _jogoRepository.Obter(jogo.Nome, jogo.Produtora, jogo.Ano, jogo.Genero);
 
             if (entidadeJogo.Count > 0)
                 throw new JogoJaCadastradoException();
@@ -61,7 +65,9 @@ namespace CatalogoJogosApi.Services
                 Id = Guid.NewGuid(),
                 Nome = jogo.Nome,
                 Produtora = jogo.Produtora,
-                Preco = jogo.Preco
+                Preco = jogo.Preco,
+                Ano = jogo.Ano,
+                Genero = jogo.Genero
             };
 
             await _jogoRepository.Inserir(jogoInsert);
@@ -71,7 +77,9 @@ namespace CatalogoJogosApi.Services
                 Id = jogoInsert.Id,
                 Nome = jogo.Nome,
                 Produtora = jogo.Produtora,
-                Preco = jogo.Preco
+                Preco = jogo.Preco,
+                Ano = jogo.Ano,
+                Genero = jogo.Genero
             };
         }
 
@@ -85,6 +93,8 @@ namespace CatalogoJogosApi.Services
             entidadeJogo.Nome = jogo.Nome;
             entidadeJogo.Produtora = jogo.Produtora;
             entidadeJogo.Preco = jogo.Preco;
+            entidadeJogo.Ano = jogo.Ano;
+            entidadeJogo.Genero = jogo.Genero;
 
             await _jogoRepository.Atualizar(entidadeJogo);
         }
