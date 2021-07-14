@@ -1,3 +1,4 @@
+using CatalogoJogosApi.Middleware;
 using CatalogoJogosApi.Repositories;
 using CatalogoJogosApi.Services;
 using Microsoft.AspNetCore.Builder;
@@ -53,6 +54,8 @@ namespace CatalogoJogosApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CatalogoJogosApi v1"));
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseHttpsRedirection();
 
