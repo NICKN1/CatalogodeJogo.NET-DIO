@@ -1,4 +1,4 @@
-Olá, este é meu segundo projeto entregue.
+Olá, este é meu segundo projeto entregue, criar um catálogo de jogos usando boas práticas de arquitetura com .NET.
 
 Neste projeto segui muito a base das informações passadas pelo professor, Thiago Oliveira, e sinceramente fiz com muita pressa.
 
