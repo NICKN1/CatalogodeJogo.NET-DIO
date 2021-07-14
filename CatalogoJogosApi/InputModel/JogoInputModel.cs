@@ -22,7 +22,7 @@ namespace CatalogoJogosApi.InputModel
             [Required]
             [Range(1971, 10000, ErrorMessage = "O ano do lançamento deve ser depois da data de 1971")]
             public int Ano { get; set; }
-            //Aqui vou criar uma classe Enum para listar os gêneros disponíves
+            
             [Required]
             [StringLength(100, MinimumLength = 2, ErrorMessage = "O gênero do jogo deve conter entre 2 e 100 caracteres")]
             public string Genero { get; set; }
