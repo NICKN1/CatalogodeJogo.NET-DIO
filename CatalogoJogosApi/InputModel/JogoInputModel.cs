@@ -20,7 +20,7 @@ namespace CatalogoJogosApi.InputModel
             
             //Preferi adicionar mais detalhes em cada jogo
             [Required]
-            [Range(1971, 10000, ErrorMessage = "O ano do lançamento deve está depois da data de 1971")]
+            [Range(1971, 10000, ErrorMessage = "O ano do lançamento deve ser depois da data de 1971")]
             public int Ano { get; set; }
             //Aqui vou criar uma classe Enum para listar os gêneros disponíves
             [Required]
